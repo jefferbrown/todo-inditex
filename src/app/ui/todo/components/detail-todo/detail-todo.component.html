@@ -1,0 +1,15 @@
+<div class="card" style="width: 18rem">
+  <div class="card-body" *ngIf="todoInfo$ | async as todo; else emptyData">
+    <h5 class="card-title">{{ todo.title }}</h5>
+    <p class="card-text">{{ todo.description }}</p>
+    <a href="#" class="card-link" routerLink="/">Volver</a>
+  </div>
+</div>
+
+<ng-template #emptyData>
+  <div class="card-body">
+    <h5 class="card-title">Producto no encontrado</h5>
+    <p class="card-text">No hay información</p>
+    <a href="#" class="btn btn-primary" routerLink="/">Volver</a>
+  </div>
+</ng-template>

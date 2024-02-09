@@ -1,0 +1,41 @@
+<div class="card" style="width: 400px">
+  <div class="card-header">Añadir TO-DO</div>
+  <div class="card-body">
+    <form [formGroup]="formTodo">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Título</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="Ropa y camiseta"
+          formControlName="title"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >Descripción</label
+        >
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+          formControlName="description"
+        ></textarea>
+      </div>
+    </form>
+  </div>
+  <div class="card-footer">
+    <button
+      type="button"
+      class="btn btn-info m-1"
+      (click)="addTodo()"
+      [disabled]="this.formTodo.invalid"
+    >
+      Añadir
+    </button>
+    <button type="button" class="btn btn-light m-1" routerLink="/">
+      Volver
+    </button>
+  </div>
+</div>
